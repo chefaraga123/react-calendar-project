@@ -6,6 +6,11 @@ import EventInputForm from './EventInputForm';
 
 function App() {
   const [currentMonth, setCurrentMonth] = useState(startOfMonth(new Date()));
+  const [events, setEvents] = useState([]);
+
+  const addEvent = (newEvent) => {
+    setEvents([...events, newEvent]);
+  };
 
   const handleNextMonth = () => {
     setCurrentMonth(addMonths(currentMonth, 1));
@@ -17,22 +22,18 @@ function App() {
 
   const monthName = format(currentMonth, 'MMMM yyyy');
 
-  const events = [
+  const existingEvents = [
     { date: new Date(2024, 0, 25), description: 'Meeting with team' },
     { date: new Date(2024, 0, 28), description: 'Doctor Appointment' },
     // ... more events
   ];
 
-  const addEvent = (newEvent) => {
-    setEvents([...events, newEvent]);
-  };
-
-
   return (
     <div>
       <Navigation onNextMonth={handleNextMonth} onPreviousMonth={handlePreviousMonth} />
       <div>{monthName}</div>
-      <CalendarGrid currentMonth={currentMonth} events={events}/>
+      <EventInputForm addEvent={addEvent} />
+      <CalendarGrid currentMonth={currentMonth} events={existingEvents}/>
     </div>
   );
 }
