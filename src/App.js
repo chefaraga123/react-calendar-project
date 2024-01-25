@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { startOfMonth, addMonths, subMonths, format } from 'date-fns';
 import CalendarGrid from './components/CalendarGrid';
 import Navigation from './components/Navigation';
-import EventInputForm from './EventInputForm';
+import EventInputForm from './components/EventInputForm';
 
 function App() {
   const [currentMonth, setCurrentMonth] = useState(startOfMonth(new Date()));
