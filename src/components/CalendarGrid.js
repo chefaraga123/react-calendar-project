@@ -1,6 +1,7 @@
 import React from 'react';
 import Day from './Day';
 import { eachDayOfInterval, startOfWeek, endOfWeek, startOfMonth, endOfMonth } from 'date-fns';
+import './CalendarGrid.css';
 
 function CalendarGrid({ currentMonth, events }) {
     const startDay = startOfMonth(currentMonth);

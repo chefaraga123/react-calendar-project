@@ -1,5 +1,6 @@
 import React from 'react';
 import { format, isSameDay } from 'date-fns';
+import './Day.css';
 
 function Day({ day, isCurrentMonth, events }) {
     const dayEvents = events.filter(event =>

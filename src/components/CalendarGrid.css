@@ -1,0 +1,31 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container for the whole calendar */
+  .calendar-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Calendar grid layout */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 days in a week */
+    grid-gap: 10px;
+    text-align: center;
+  }
+  
+  /* Basic styling for events */
+  .event {
+    font-size: 0.85em;
+    color: #d63384;
+  }
+  
